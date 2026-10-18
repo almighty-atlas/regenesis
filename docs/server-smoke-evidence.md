@@ -1,5 +1,9 @@
 # Dedicated-Server-Diagnose – 2026-10-18
 
+Historischer Phase-A-Pre-EULA-Lauf. Die später ausdrücklich autorisierten,
+erfolgreichen Drei-Seed-B1-Läufe sind im [B1-Protokoll](worldgen-b1-tests.md)
+dokumentiert; der unten beschriebene Serverordner wurde dafür nicht gestartet.
+
 **Forge-Installation bestanden; echter Pre-EULA-Prozessstart ausgeführt;
 vollständiger Server-Boot blockiert. Kein Nachweis der Laufzeitkompatibilität.**
 

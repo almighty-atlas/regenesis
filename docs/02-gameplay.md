@@ -2,6 +2,11 @@
 
 **Sämtliche Mengen sind Balancing-Zielwerte und keine existierenden Mod-Rezepte.** Eigene Items unten sind geplant, noch nicht registriert.
 
+**B1-Zwischenstand:** Das zusätzliche Preset für eine tote Overworld ist als
+[Datenprototyp implementiert](worldgen-b1.md), aber noch nicht ingame abgenommen.
+Forschungsstation, Saatgutgarantie und die folgenden Progressionsketten bleiben
+B2/B3-Spezifikation. B1 wird deshalb zunächst mit Creative-Testinventar geprüft.
+
 ## Welt- und Startregeln
 
 - Echte Overworld mit Höhenunterschieden und unterirdischen Strukturen; Oberfläche grau, kaum belebter Boden, keine natürlichen friedlichen Tier-Spawns.

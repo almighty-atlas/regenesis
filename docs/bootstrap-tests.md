@@ -2,6 +2,10 @@
 
 Branch: `feat/issue-1-forge-bootstrap`; Issue #1.
 
+Historischer Phase-A-Bericht. Später wurden nach ausdrücklicher Zustimmung
+drei neue B1-Serverwelten erfolgreich gestartet, geprüft und gestoppt;
+[aktuelles B1-Protokoll](worldgen-b1-tests.md). Clientabnahme für B1 bleibt offen.
+
 ## Tatsächlich ausgeführt
 
 | Prüfung | Ergebnis | Aussagegrenze |

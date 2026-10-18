@@ -1,5 +1,13 @@
 # Prüfplan — ReGenesis v0.1 / v0.2
 
+## Phase B1 — Worldgen-Prototyp
+
+[Architektur und Drei-Seed-Abnahme](worldgen-b1.md) ·
+[ausgeführte Tests, Belege und Grenzen](worldgen-b1-tests.md).
+Datendefinitionen und Export werden automatisiert geprüft; Clientwelt,
+Screenshots, Ressourcenfunde und natürliches Wachstum sind noch nicht belegt.
+Die Phase-A-Abnahme darf nicht auf das neue B1-Preset übertragen werden.
+
 ## Phase A – aktueller Stand
 
 [Ausgeführte Prüfungen und Blocker](bootstrap-tests.md),

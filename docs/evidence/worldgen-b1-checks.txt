@@ -1,0 +1,62 @@
+$ python3 tools/pack.py --check
+PASS: platform and 13 artifact records; no runtime claim
+
+
+exit=0
+
+$ python3 tools/worldgen.py --extra .work/server-smoke/libraries/net/minecraft/server/1.20.1-20230612.114412/server-1.20.1-20230612.114412-extra.jar --report .work/b1-vanilla-reports/reports/biome_parameters/minecraft/overworld.json --check
+PASS: 53 mapped biomes; 64 reproducible files
+
+
+exit=0
+
+$ python3 tools/audit_artifacts.py
+PASS: 13 parent JARs; 20 including nested JARs; hashes, CRC, declared IDs/ranges, required providers
+Does not prove Maven version ordering, API compatibility, side safety or Minecraft boot.
+
+
+exit=0
+
+$ python3 -m unittest discover -s tests -v
+Created /tmp/tmpffn8zkcf/instance.zip; 13 verified mods. LOCAL USE ONLY; do not redistribute archive.
+Created /tmp/tmpjifuqrel/one.zip; 13 verified mods. LOCAL USE ONLY; do not redistribute archive.
+Created /tmp/tmpjifuqrel/two.zip; 13 verified mods. LOCAL USE ONLY; do not redistribute archive.
+
+test_archive_contains_normal_world_default (test_pack.PackTests.test_archive_contains_normal_world_default) ... ok
+test_archive_reproducible_and_exact (test_pack.PackTests.test_archive_reproducible_and_exact) ... ok
+test_corrupt_cache_fails_without_network (test_pack.PackTests.test_corrupt_cache_fails_without_network) ... ok
+test_failed_download_not_published (test_pack.PackTests.test_failed_download_not_published) ... ok
+test_lock (test_pack.PackTests.test_lock) ... ok
+test_reject_bad_records (test_pack.PackTests.test_reject_bad_records) ... ok
+test_climate_regions_are_bijective_and_preserved (test_worldgen.WorldgenTests.test_climate_regions_are_bijective_and_preserved) ... ok
+test_create_minerals_are_scoped_to_dead_biomes (test_worldgen.WorldgenTests.test_create_minerals_are_scoped_to_dead_biomes) ... ok
+test_dead_biomes_keep_minerals_carvers_without_ecological_spawns (test_worldgen.WorldgenTests.test_dead_biomes_keep_minerals_carvers_without_ecological_spawns) ... ok
+test_export_contains_exact_worldgen_bytes_and_no_saves (test_worldgen.WorldgenTests.test_export_contains_exact_worldgen_bytes_and_no_saves) ... ok
+test_only_opt_in_preset_and_structure_tags_touch_vanilla (test_worldgen.WorldgenTests.test_only_opt_in_preset_and_structure_tags_touch_vanilla) ... ok
+test_vanilla_terrain_density_and_resources_from_pinned_sources (test_worldgen.WorldgenTests.test_vanilla_terrain_density_and_resources_from_pinned_sources) ... ok
+test_existing_output_is_preserved_without_launch (test_worldgen_smoke.WorldgenSmokeSafetyTests.test_existing_output_is_preserved_without_launch) ... ok
+test_no_eula_consent_never_creates_output_or_launches_java (test_worldgen_smoke.WorldgenSmokeSafetyTests.test_no_eula_consent_never_creates_output_or_launches_java) ... usage: worldgen_smoke.py [-h] --java JAVA [--runtime RUNTIME]
+                         [--output OUTPUT] [--accept-eula]
+worldgen_smoke.py: error: Explicit personal --accept-eula required; no server started
+ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.484s
+
+OK
+
+exit=0
+
+$ python3 -m py_compile tools/pack.py tools/worldgen.py tools/worldgen_smoke.py tests/test_worldgen.py tests/test_worldgen_smoke.py
+
+
+exit=0
+
+$ python3 tools/pack.py --output .work/regenesis-phase-b1-repeat.zip
+Created .work/regenesis-phase-b1-repeat.zip; 13 verified mods. LOCAL USE ONLY; do not redistribute archive.
+
+
+exit=0
+
+Prism ZIP byte equality: PASS
+Prism ZIP SHA256: b2dc03da00563f07b9493a910a576b6ba329eede659031fe3181cf640f582e5b

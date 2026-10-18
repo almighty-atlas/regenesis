@@ -1,8 +1,20 @@
 # ReGenesis — Entwicklungsgrundlage v0.4
 
-**Status:** Phase-A-Bootstrap mit gepinnten Artefakten und lokal erzeugbarem Prism-Archiv. Clientstart mit Java 17, 18 angezeigten Mods und normale Weltgenerierung sind durch den Nutzer bestätigt (2026-10-18). Der Export enthält jetzt den Ex-Deorum-Default für normale Welten. Serverstart nur bis EULA-Sperre getestet; **noch keine nachhaltige Gameplay-Freigabe**. Siehe [Prüfprotokoll](docs/bootstrap-tests.md).
+**Status:** Phase-A-Bootstrap mit gepinnten Artefakten und lokal erzeugbarem Prism-Archiv. Clientstart mit Java 17, 18 angezeigten Mods und normale Weltgenerierung sind durch den Nutzer bestätigt (2026-10-18). Der Export enthält jetzt den Ex-Deorum-Default für normale Welten. Drei isolierte B1-Serverwelten haben Boot, Biomproben und sauberen Shutdown bestanden; **noch keine nachhaltige Gameplay-Freigabe**. Siehe [Bootstrap-Protokoll](docs/bootstrap-tests.md) und [B1-Laufzeitbelege](docs/worldgen-b1-tests.md).
 
 Ein Minecraft-Java-Modpack über die Wiederherstellung einer toten Welt: SkyFactory-artige Ressourcengewinnung, vegane Landwirtschaft, regenerative Energie, Kreislaufwirtschaft, Terraforming, Wiederansiedlung und Rekonstruktion von Arten.
+
+**Phase B1 / Issue #3:** Zusätzliches Preset **ReGenesis: Die tote Welt** als
+Worldgen-Datenprototyp implementiert: 53 zuordenbare tote Biomvarianten,
+Kiesoberfläche, erhaltene Overworld-Dichte/Höhlen/Erze, lokale Vegetations- und
+Spawnlisten. Export mit
+`python3 tools/pack.py --output .work/regenesis-phase-b1.zip`, als **neue**
+Prism-Instanz importieren und das Preset bei der **neuen** Welt ausdrücklich
+auswählen. Keine bestehende Instanz/Saves aktualisieren.
+**Drei-Seed-Servertest bestanden; bereit für die manuelle Clientabnahme.**
+Noch kein erfolgreicher B1-Clientboot, visueller Drei-Seed-Test oder Screenshot.
+[Architektur, Installation und reproduzierbare Tests](docs/worldgen-b1.md) ·
+[tatsächliche Testbelege und Blocker](docs/worldgen-b1-tests.md).
 
 ## Technische Leitplanken
 
@@ -37,7 +49,8 @@ python3 -m unittest discover -s tests -v
    `prismlauncher --dir /ABSOLUTER/NEUER/PFAD/regenesis-prism`.
    Ersteinrichtung abschließen, Minecraft-Konto selbst hinzufügen.
 3. **Instanz hinzufügen → Importieren**: das lokal erzeugte ZIP auswählen.
-   Es enthält `mmc-pack.json` für Minecraft 1.20.1 / Forge 47.4.10 und die
+   Es enthält `mmc-pack.json` für Minecraft 1.20.1 / Forge 47.4.10, inzwischen
+   zusätzlich die B1-Presetdaten in `.minecraft/kubejs/`, sowie die
    verifizierten Mods sowie `.minecraft/config/exdeorum-common.toml` mit
    `[common]` → `set_void_world_as_default = false`. Dadurch wird Ex Deorums
    Void-/Skyblock-Preset nicht als Standard für neue Welten gesetzt.
@@ -90,7 +103,9 @@ Der Läufer verwendet nur ein **neues** `.work/server-smoke`, bindet
 `127.0.0.1:25585`, wartet begrenzt auf `Done` und sendet danach `stop`.
 Vorhandene Testordner werden abgelehnt, nicht gelöscht/überschrieben.
 Keinen vorhandenen Server verwenden. [Ergebnis und Logs](docs/server-smoke-evidence.md).
-Dieser automatisierte Opt-in-Bootpfad bleibt ungetestet.
+Dieser Phase-A-Opt-in-Bootpfad bleibt ungetestet. Der separate
+[`worldgen_smoke.py`-Pfad](docs/worldgen-b1.md) wurde nach ausdrücklicher
+Betreiberzustimmung in drei neuen B1-Welten erfolgreich ausgeführt.
 
 ### Ergebnisübersicht
 
@@ -99,7 +114,9 @@ Dieser automatisierte Opt-in-Bootpfad bleibt ungetestet.
   im ZIP, Forge-Serverinstallation.
 - **Durch Nutzer bestätigt:** Clientstart mit Java 17 und 18 angezeigten Mods;
   normale Weltgenerierung nach Abschalten des Ex-Deorum-Void-Defaults.
-- **Blockiert:** vollständiger Serverstart ohne persönliche EULA-Zustimmung.
+- **Serverseitig bestanden:** drei neue B1-Welten mit Java 17, bestätigten toten
+  Biomen, gespeichertem Terrain und sauberem Exit 0 nach ausdrücklicher
+  EULA-Zustimmung; [Ergebnisse](docs/worldgen-b1-tests.md).
 - **Nicht durchgeführt:** separate JEI-/Quest-/Rendering-/Verbindungstests;
   vegane und fossilfreie Progressionsabnahme.
 
@@ -112,10 +129,10 @@ Dieser automatisierte Opt-in-Bootpfad bleibt ungetestet.
 
 ## Technische Grenzen des jetzigen Stands
 
-1. Wasteland Reimagined überschreibt für seinen Wasteland-Welttyp andere Biome; eine dauerhafte dynamische Renaturierung ist dadurch **nicht gelöst**.
+1. B1 verwendet eigene zuordenbare tote Biomvarianten statt Wasteland Reimagined. Dynamische Renaturierung ist weiterhin **nicht implementiert**; Architektur und Migrationsplan stehen in [docs/worldgen-b1.md](docs/worldgen-b1.md).
 2. Das jüngere Addon „KubeJS Ex Deorum“ ist **nicht** für Forge 1.20.1 erhältlich. Ex-Deorum-Rezepte werden daher zunächst mittels des integrierten Datapack-Systems beziehungsweise dokumentierter 1.20.1-APIs angepasst.
 3. „Startkiste“, einzigartige Boden-/Wasserproben und regionale Umweltwerte sind vorerst **Spezifikation**, noch keine implementierten Spielmechaniken.
-4. Der erfolgreiche Clientboot und die normale Weltgenerierung beruhen auf dem Nutzerbericht, ohne von Codex erfasste Clientlogs. Ein vollständiger Serverboot ist weiterhin nicht nachgewiesen. Der Server-Pre-EULA-Lauf bestätigt nur den frühen Startpfad; weitere Ingame-/Rezepttests bleiben offen.
+4. Der erfolgreiche Phase-A-Clientboot und die normale Weltgenerierung beruhen auf dem Nutzerbericht, ohne von Codex erfasste Clientlogs. Drei vollständige B1-Serverboots mit toten Biomproben und sauberem Shutdown sind nachgewiesen. B1-Client-/Rendering-/Wachstums-/Reload- und weitere Ingame-/Rezepttests bleiben offen.
 5. Phase A verändert keine Vanilla-/Mod-Rezepte: Tierprodukte und Verbrennung sind noch nicht gesperrt. Der Bootstrap ist keine nachhaltige Gameplay-Freigabe.
 
 ## Öffentliche Quellen
