@@ -1,0 +1,3 @@
+# Keep normal terrain as the default for new worlds in the Phase A bootstrap.
+[common]
+set_void_world_as_default = false

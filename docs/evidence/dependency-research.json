@@ -1,0 +1,386 @@
+{
+  "providers": {
+    "minecraft": "1.20.1",
+    "forge": "47.4.10",
+    "create": "6.0.8",
+    "flywheel": "1.0.5",
+    "ponder": "1.0.91",
+    "exdeorum": "1.53",
+    "farmersdelight": "1.20.1-1.2.11a",
+    "vegandelight": "1.4",
+    "kubejs": "2001.6.5-build.26",
+    "rhino": "2001.2.3-build.10",
+    "architectury": "9.2.14",
+    "jei": "15.56.0.205",
+    "jade": "11.13.3+forge",
+    "ftbquests": "2001.4.22",
+    "ftblibrary": "2001.2.9",
+    "ftbteams": "2001.3.0",
+    "ftbxmodcompat": "2.1.3",
+    "mixinextras": "0.4.1"
+  },
+  "checks": [
+    {
+      "owner": "create",
+      "dependency": "forge",
+      "range": "[47.1.3,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "create",
+      "dependency": "minecraft",
+      "range": "[1.20.1]",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "create",
+      "dependency": "flywheel",
+      "range": "[1.0.0,2.0)",
+      "selected": "1.0.5",
+      "mandatory": true,
+      "side": "client"
+    },
+    {
+      "owner": "create",
+      "dependency": "ponder",
+      "range": "[0.8,)",
+      "selected": "1.0.91",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "create",
+      "dependency": "jei",
+      "range": "[15.19.0,)",
+      "selected": "15.56.0.205",
+      "mandatory": false,
+      "side": "client"
+    },
+    {
+      "owner": "flywheel",
+      "dependency": "minecraft",
+      "range": "[1.20.1,1.20.2)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "client"
+    },
+    {
+      "owner": "flywheel",
+      "dependency": "forge",
+      "range": "[47.0.0,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "client"
+    },
+    {
+      "owner": "ponder",
+      "dependency": "forge",
+      "range": "[47,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ponder",
+      "dependency": "minecraft",
+      "range": "[1.20.1, 1.21)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ponder",
+      "dependency": "flywheel",
+      "range": "[1.0.0,2.0)",
+      "selected": "1.0.5",
+      "mandatory": true,
+      "side": "client"
+    },
+    {
+      "owner": "exdeorum",
+      "dependency": "forge",
+      "range": "[47,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "exdeorum",
+      "dependency": "minecraft",
+      "range": "[1.20.1]",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "farmersdelight",
+      "dependency": "forge",
+      "range": "[47.1.0,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "farmersdelight",
+      "dependency": "minecraft",
+      "range": "[1.20,1.20.1]",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "vegandelight",
+      "dependency": "forge",
+      "range": "[40,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "vegandelight",
+      "dependency": "minecraft",
+      "range": "[1.20.1,1.21)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "vegandelight",
+      "dependency": "farmersdelight",
+      "range": "[1.2.3,)",
+      "selected": "1.20.1-1.2.11a",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "kubejs",
+      "dependency": "forge",
+      "range": "[47.1.0,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "kubejs",
+      "dependency": "rhino",
+      "range": "[2001.2.2-build.1,)",
+      "selected": "2001.2.3-build.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "kubejs",
+      "dependency": "architectury",
+      "range": "[9.1.12,)",
+      "selected": "9.2.14",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "kubejs",
+      "dependency": "jei",
+      "range": "[1.0.0,)",
+      "selected": "15.56.0.205",
+      "mandatory": false,
+      "side": "both"
+    },
+    {
+      "owner": "architectury",
+      "dependency": "minecraft",
+      "range": "[1.20,)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "architectury",
+      "dependency": "forge",
+      "range": "[46,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "jei",
+      "dependency": "forge",
+      "range": "[47.0,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "jei",
+      "dependency": "minecraft",
+      "range": "[1.20.1, 1.20.2)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "jade",
+      "dependency": "forge",
+      "range": "[46, )",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbquests",
+      "dependency": "minecraft",
+      "range": "[1.20.1,)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbquests",
+      "dependency": "architectury",
+      "range": "[9.0.8,)",
+      "selected": "9.2.14",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbquests",
+      "dependency": "ftblibrary",
+      "range": "[2001.2.1,)",
+      "selected": "2001.2.9",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbquests",
+      "dependency": "ftbteams",
+      "range": "[2001.1.4,)",
+      "selected": "2001.3.0",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftblibrary",
+      "dependency": "forge",
+      "range": "[47.0.1,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftblibrary",
+      "dependency": "minecraft",
+      "range": "[1.20,)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftblibrary",
+      "dependency": "architectury",
+      "range": "[9.0.8,)",
+      "selected": "9.2.14",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftblibrary",
+      "dependency": "ftbquests",
+      "range": "[2001.4.8,)",
+      "selected": "2001.4.22",
+      "mandatory": false,
+      "side": "both"
+    },
+    {
+      "owner": "ftbteams",
+      "dependency": "forge",
+      "range": "[47.1.47,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbteams",
+      "dependency": "minecraft",
+      "range": "[1.20.1,)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbteams",
+      "dependency": "architectury",
+      "range": "[9.1.12,)",
+      "selected": "9.2.14",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbteams",
+      "dependency": "ftblibrary",
+      "range": "[2001.2.0,)",
+      "selected": "2001.2.9",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbxmodcompat",
+      "dependency": "forge",
+      "range": "[47,)",
+      "selected": "47.4.10",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbxmodcompat",
+      "dependency": "minecraft",
+      "range": "[1.20.1,)",
+      "selected": "1.20.1",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbxmodcompat",
+      "dependency": "architectury",
+      "range": "[9.0.8,)",
+      "selected": "9.2.14",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbxmodcompat",
+      "dependency": "ftblibrary",
+      "range": "[2001.1.3,)",
+      "selected": "2001.2.9",
+      "mandatory": true,
+      "side": "both"
+    },
+    {
+      "owner": "ftbxmodcompat",
+      "dependency": "ftbquests",
+      "range": "[2001.3.0,)",
+      "selected": "2001.4.22",
+      "mandatory": false,
+      "side": "both"
+    },
+    {
+      "owner": "ftbxmodcompat",
+      "dependency": "jei",
+      "range": "[15.2,)",
+      "selected": "15.56.0.205",
+      "mandatory": false,
+      "side": "both"
+    },
+    {
+      "owner": "ftbxmodcompat",
+      "dependency": "kubejs",
+      "range": "[2001.6.3,)",
+      "selected": "2001.6.5-build.26",
+      "mandatory": false,
+      "side": "both"
+    }
+  ],
+  "boot": "not_run",
+  "jarjar_mixinextras_selected_candidate": "0.4.1"
+}

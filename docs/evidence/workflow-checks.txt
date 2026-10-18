@@ -1,0 +1,31 @@
+Phase A, 2026-10-18
+Environment: Linux, Python 3.14.8; Minecraft JVM available: OpenJDK 17.0.20.1+1
+
+python3 tools/pack.py --check
+PASS: platform and 13 artifact records; no runtime claim
+
+python3 tools/audit_artifacts.py
+PASS: 13 parent JARs; 20 including nested JARs; hashes, CRC, declared IDs/ranges, required providers
+Does not prove Maven version ordering, API compatibility, side safety or Minecraft boot.
+
+python3 -m unittest discover -s tests -v
+5 tests, all OK, none skipped (local artifact cache present).
+- test_archive_reproducible_and_exact
+- test_corrupt_cache_fails_without_network
+- test_failed_download_not_published
+- test_lock
+- test_reject_bad_records
+
+python3 tools/pack.py --cache .work/clean-downloads --output .work/regenesis-clean.zip
+Created .work/regenesis-clean.zip; 13 verified mods.
+Clean-cache and research-cache exports are byte-identical.
+ZIP SHA256: 866a2aba597e5655886f2ec6a67664f765d9609755e22a937233fd42281ab201
+
+python3 -m py_compile tools/pack.py tools/server_smoke.py tools/audit_artifacts.py
+Exit 0.
+
+git --no-pager diff --check
+Exit 0.
+
+No Minecraft client/main-menu boot or post-EULA server boot passed.
+See bootstrap-tests.md and server-smoke-evidence.md for precise limits.
