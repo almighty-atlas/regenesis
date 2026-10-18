@@ -1,0 +1,204 @@
+B1 dedicated runtime evidence, 2026-10-18, Europe/Berlin
+python3 tools/worldgen_smoke.py --java /usr/lib/jvm/java-17-openjdk/bin/java --accept-eula --output .work/worldgen-b1-consented-01
+Runner exit: 0. Extracted lines; complete original logs remain in the new local test directories.
+
+=== seed 3; port 25586; result.json ===
+{
+  "command": [
+    "/usr/lib/jvm/java-17-openjdk/bin/java",
+    "-Xmx3G",
+    "@libraries/net/minecraftforge/forge/1.20.1-47.4.10/unix_args.txt",
+    "nogui"
+  ],
+  "done": true,
+  "biome_samples": {
+    "0,0": "regenesis:dead_old_growth_birch_forest",
+    "128,128": "regenesis:dead_dark_forest",
+    "-128,-128": "regenesis:dead_old_growth_birch_forest"
+  },
+  "exit_code": 0,
+  "passed": true
+}
+=== console.log excerpts ===
+[23:39:08] [modloading-worker-0/INFO] [KubeJS Startup/]: example.js#5: Hello, World! (Loaded startup scripts)
+[23:39:08] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 1/1 KubeJS startup scripts in 0.144 s with 0 errors and 0 warnings
+[23:39:11] [main/INFO] [KubeJS Server/]: example.js#5: Hello, World! (Loaded server scripts)
+[23:39:11] [main/INFO] [KubeJS Server/]: Loaded 1/1 KubeJS server scripts in 0.008 s with 0 errors and 0 warnings
+[23:39:21] [Server thread/INFO] [minecraft/DedicatedServer]: Done (8.902s)! For help, type "help"
+[23:39:21] [Server thread/INFO] [minecraft/MinecraftServer]: Seed: [3]
+[23:39:21] [Server thread/INFO] [minecraft/MinecraftServer]: There are 18 data pack(s) enabled: [vanilla (built-in)], [mod:farmersdelight], [mod:mixinextras], [mod:rhino], [mod:exdeorum], [mod:jade], [mod:architectury], [mod:kubejs], [mod:ftblibrary], [mod:vegandelight], [mod:ftbteams], [mod:ftbquests], [mod:ftbxmodcompat], [mod:forge], [mod:flywheel], [mod:ponder], [mod:create], [create:dynamic_data (built-in)]
+[23:39:21] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [0, 0] in minecraft:overworld to be force loaded
+[23:39:21] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [8, 8] in minecraft:overworld to be force loaded
+[23:39:21] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [-8, -8] in minecraft:overworld to be force loaded
+[23:39:36] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [0.5d, 71.0d, 0.5d]
+[23:39:36] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE 0 0 regenesis:dead_old_growth_birch_forest
+[23:39:36] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [128.5d, 65.0d, 128.5d]
+[23:39:36] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE 128 128 regenesis:dead_dark_forest
+[23:39:36] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [-127.5d, 67.0d, -127.5d]
+[23:39:36] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE -128 -128 regenesis:dead_old_growth_birch_forest
+[23:39:36] [Server thread/INFO] [minecraft/MinecraftServer]: Saving the game (this may take a moment!)
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (b1-test-world): All chunks are saved
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saved the game
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping the server
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[23:39:37] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:overworld
+[23:39:43] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:the_end
+[23:39:43] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:the_nether
+[23:39:43] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (b1-test-world): All chunks are saved
+[23:39:43] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[23:39:43] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[23:39:43] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+=== warnings by logger ===
+{
+  "[ne.mi.fm.lo.FMLConfig/CORE]": 1,
+  "[ne.mi.fm.lo.mo.ModFileParser/LOADING]": 4,
+  "[KubeJS/]": 4,
+  "[ne.mi.co.ForgeConfigSpec/CORE]": 275,
+  "[minecraft/VanillaPackResourcesBuilder]": 2
+}
+=== Netty DEBUG capability probes (nonfatal) ===
+[18Oct2026 23:39:08.488] [main/DEBUG] [io.netty.util.internal.PlatformDependent0/]: direct buffer constructor: unavailable
+java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31) ~[netty-common-4.1.82.Final.jar%2382!/:4.1.82.Final]
+[18Oct2026 23:39:08.492] [main/DEBUG] [io.netty.util.internal.PlatformDependent0/]: jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 (in module io.netty.common) cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to module io.netty.common
+	at jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:392) ~[?:?]
+
+=== seed 8675309; port 25587; result.json ===
+{
+  "command": [
+    "/usr/lib/jvm/java-17-openjdk/bin/java",
+    "-Xmx3G",
+    "@libraries/net/minecraftforge/forge/1.20.1-47.4.10/unix_args.txt",
+    "nogui"
+  ],
+  "done": true,
+  "biome_samples": {
+    "0,0": "regenesis:dead_forest",
+    "128,128": "regenesis:dead_old_growth_birch_forest",
+    "-128,-128": "regenesis:dead_meadow"
+  },
+  "exit_code": 0,
+  "passed": true
+}
+=== console.log excerpts ===
+[23:39:50] [modloading-worker-0/INFO] [KubeJS Startup/]: example.js#5: Hello, World! (Loaded startup scripts)
+[23:39:50] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 1/1 KubeJS startup scripts in 0.142 s with 0 errors and 0 warnings
+[23:39:52] [main/INFO] [KubeJS Server/]: example.js#5: Hello, World! (Loaded server scripts)
+[23:39:52] [main/INFO] [KubeJS Server/]: Loaded 1/1 KubeJS server scripts in 0.008 s with 0 errors and 0 warnings
+[23:40:03] [Server thread/INFO] [minecraft/DedicatedServer]: Done (8.976s)! For help, type "help"
+[23:40:03] [Server thread/INFO] [minecraft/MinecraftServer]: Seed: [8675309]
+[23:40:03] [Server thread/INFO] [minecraft/MinecraftServer]: There are 18 data pack(s) enabled: [vanilla (built-in)], [mod:farmersdelight], [mod:mixinextras], [mod:rhino], [mod:exdeorum], [mod:jade], [mod:architectury], [mod:kubejs], [mod:ftblibrary], [mod:vegandelight], [mod:ftbteams], [mod:ftbquests], [mod:ftbxmodcompat], [mod:forge], [mod:flywheel], [mod:ponder], [mod:create], [create:dynamic_data (built-in)]
+[23:40:03] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [0, 0] in minecraft:overworld to be force loaded
+[23:40:03] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [8, 8] in minecraft:overworld to be force loaded
+[23:40:03] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [-8, -8] in minecraft:overworld to be force loaded
+[23:40:18] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [0.5d, 63.0d, 0.5d]
+[23:40:18] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE 0 0 regenesis:dead_forest
+[23:40:18] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [128.5d, 70.0d, 128.5d]
+[23:40:18] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE 128 128 regenesis:dead_old_growth_birch_forest
+[23:40:18] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [-127.5d, 95.0d, -127.5d]
+[23:40:18] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE -128 -128 regenesis:dead_meadow
+[23:40:18] [Server thread/INFO] [minecraft/MinecraftServer]: Saving the game (this may take a moment!)
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (b1-test-world): All chunks are saved
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: Saved the game
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping the server
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[23:40:19] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:overworld
+[23:40:26] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:the_end
+[23:40:26] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:the_nether
+[23:40:26] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (b1-test-world): All chunks are saved
+[23:40:26] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[23:40:26] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[23:40:26] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+=== warnings by logger ===
+{
+  "[ne.mi.fm.lo.FMLConfig/CORE]": 1,
+  "[ne.mi.fm.lo.mo.ModFileParser/LOADING]": 4,
+  "[KubeJS/]": 4,
+  "[ne.mi.co.ForgeConfigSpec/CORE]": 275,
+  "[minecraft/VanillaPackResourcesBuilder]": 2
+}
+=== Netty DEBUG capability probes (nonfatal) ===
+[18Oct2026 23:39:50.256] [main/DEBUG] [io.netty.util.internal.PlatformDependent0/]: direct buffer constructor: unavailable
+java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31) ~[netty-common-4.1.82.Final.jar%2382!/:4.1.82.Final]
+[18Oct2026 23:39:50.257] [main/DEBUG] [io.netty.util.internal.PlatformDependent0/]: jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 (in module io.netty.common) cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to module io.netty.common
+	at jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:392) ~[?:?]
+
+=== seed -20261018; port 25588; result.json ===
+{
+  "command": [
+    "/usr/lib/jvm/java-17-openjdk/bin/java",
+    "-Xmx3G",
+    "@libraries/net/minecraftforge/forge/1.20.1-47.4.10/unix_args.txt",
+    "nogui"
+  ],
+  "done": true,
+  "biome_samples": {
+    "0,0": "regenesis:dead_forest",
+    "128,128": "regenesis:dead_snowy_slopes",
+    "-128,-128": "regenesis:dead_forest"
+  },
+  "exit_code": 0,
+  "passed": true
+}
+=== console.log excerpts ===
+[23:40:35] [modloading-worker-0/INFO] [KubeJS Startup/]: example.js#5: Hello, World! (Loaded startup scripts)
+[23:40:35] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 1/1 KubeJS startup scripts in 0.135 s with 0 errors and 0 warnings
+[23:40:37] [main/INFO] [KubeJS Server/]: example.js#5: Hello, World! (Loaded server scripts)
+[23:40:37] [main/INFO] [KubeJS Server/]: Loaded 1/1 KubeJS server scripts in 0.008 s with 0 errors and 0 warnings
+[23:40:49] [Server thread/INFO] [minecraft/DedicatedServer]: Done (10.303s)! For help, type "help"
+[23:40:49] [Server thread/INFO] [minecraft/MinecraftServer]: Seed: [-20261018]
+[23:40:49] [Server thread/INFO] [minecraft/MinecraftServer]: There are 18 data pack(s) enabled: [vanilla (built-in)], [mod:farmersdelight], [mod:mixinextras], [mod:rhino], [mod:exdeorum], [mod:jade], [mod:architectury], [mod:kubejs], [mod:ftblibrary], [mod:vegandelight], [mod:ftbteams], [mod:ftbquests], [mod:ftbxmodcompat], [mod:forge], [mod:flywheel], [mod:ponder], [mod:create], [create:dynamic_data (built-in)]
+[23:40:49] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [0, 0] in minecraft:overworld to be force loaded
+[23:40:49] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [8, 8] in minecraft:overworld to be force loaded
+[23:40:49] [Server thread/INFO] [minecraft/MinecraftServer]: Marked chunk [-8, -8] in minecraft:overworld to be force loaded
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [0.5d, 98.0d, 0.5d]
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE 0 0 regenesis:dead_forest
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [128.5d, 118.0d, 128.5d]
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE 128 128 regenesis:dead_snowy_slopes
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Marker has the following entity data: [-127.5d, 94.0d, -127.5d]
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: [Not Secure] [Server] B1_SAMPLE -128 -128 regenesis:dead_forest
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Saving the game (this may take a moment!)
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (b1-test-world): All chunks are saved
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Saved the game
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping the server
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[23:41:04] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:overworld
+[23:41:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:the_end
+[23:41:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[b1-test-world]'/minecraft:the_nether
+[23:41:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (b1-test-world): All chunks are saved
+[23:41:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[23:41:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[23:41:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+=== warnings by logger ===
+{
+  "[ne.mi.fm.lo.FMLConfig/CORE]": 1,
+  "[ne.mi.fm.lo.mo.ModFileParser/LOADING]": 4,
+  "[KubeJS/]": 4,
+  "[ne.mi.co.ForgeConfigSpec/CORE]": 275,
+  "[minecraft/VanillaPackResourcesBuilder]": 2
+}
+=== Netty DEBUG capability probes (nonfatal) ===
+[18Oct2026 23:40:34.810] [main/DEBUG] [io.netty.util.internal.PlatformDependent0/]: direct buffer constructor: unavailable
+java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31) ~[netty-common-4.1.82.Final.jar%2382!/:4.1.82.Final]
+[18Oct2026 23:40:34.811] [main/DEBUG] [io.netty.util.internal.PlatformDependent0/]: jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 (in module io.netty.common) cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to module io.netty.common
+	at jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:392) ~[?:?]

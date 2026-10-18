@@ -1,0 +1,287 @@
+{
+  "tested_commit": "8727cbbb230b0dde326959cb1c8e3c7c05cfaa66",
+  "date": "2026-10-18",
+  "timezone": "Europe/Berlin",
+  "python": "Python 3.14.8",
+  "java": "OpenJDK 17.0.20.1+1",
+  "minecraft": "1.20.1",
+  "forge": "47.4.10",
+  "command": "python3 tools/worldgen_smoke.py --java /usr/lib/jvm/java-17-openjdk/bin/java --accept-eula --output .work/worldgen-b1-consented-01",
+  "runner_exit_code": 0,
+  "personal_eula_consent": "Explicit user consent; isolated new B1 servers only",
+  "mods_lock_sha256": "46e59cbb89f5068403afd59b90491b310b30bac19338798280b0c0d1b6ea3ae5",
+  "platform_lock_sha256": "38f718f31f1c143e36b3fbc84276b41935d7339658d6d66a6c349e2b5b8d9918",
+  "runner_sha256": "867590b8272baf732b704b41963c466fdcfbbc1e96cc9c0e35f07f970120c4ca",
+  "runtime_library_files": 104,
+  "runtime_library_manifest_sha256": "9d2956732ddebf96e7ab2965b504685d03421bb006b54150e2cf3a89329f9f0d",
+  "client_tests_run": false,
+  "worlds": [
+    {
+      "seed": 3,
+      "directory": ".work/worldgen-b1-consented-01/3",
+      "loopback_port": 25586,
+      "result": {
+        "command": [
+          "/usr/lib/jvm/java-17-openjdk/bin/java",
+          "-Xmx3G",
+          "@libraries/net/minecraftforge/forge/1.20.1-47.4.10/unix_args.txt",
+          "nogui"
+        ],
+        "done": true,
+        "biome_samples": {
+          "0,0": "regenesis:dead_old_growth_birch_forest",
+          "128,128": "regenesis:dead_dark_forest",
+          "-128,-128": "regenesis:dead_old_growth_birch_forest"
+        },
+        "exit_code": 0,
+        "passed": true
+      },
+      "done_reported_seconds": 8.902,
+      "surface_marker_positions": [
+        [
+          0.5,
+          71.0,
+          0.5
+        ],
+        [
+          128.5,
+          65.0,
+          128.5
+        ],
+        [
+          -127.5,
+          67.0,
+          -127.5
+        ]
+      ],
+      "seed_confirmed": true,
+      "saved_game": true,
+      "all_dimensions_saved_on_shutdown": true,
+      "mod_hashes_match_lock": true,
+      "copied_libraries_match_source": true,
+      "packaged_kubejs_files_match_source": true,
+      "console_warning_counts": {
+        "[ne.mi.fm.lo.FMLConfig/CORE]": 1,
+        "[ne.mi.fm.lo.mo.ModFileParser/LOADING]": 4,
+        "[KubeJS/]": 4,
+        "[ne.mi.co.ForgeConfigSpec/CORE]": 275,
+        "[minecraft/VanillaPackResourcesBuilder]": 2
+      },
+      "debug_exceptions_nonfatal": [
+        "java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled",
+        "java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 (in module io.netty.common) cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to module io.netty.common"
+      ],
+      "crash_reports": 0,
+      "logs": {
+        "console.log": {
+          "sha256": "ccca09f1120c2c586ce2f96c41961f32a1cf6b1aba04afaf5718a254a6868af5",
+          "bytes": 196526,
+          "error_fatal_entries": 0
+        },
+        "result.json": {
+          "sha256": "1d9a201f598dc3e120fa0bc82d02a466d905a6cdaa8f8888de43e7820c3d5f24",
+          "bytes": 400,
+          "error_fatal_entries": 0
+        },
+        "logs/latest.log": {
+          "sha256": "bb5e50d4711b5c838699752db3b731426baf497cbe7c1aa9af6145a2c8a19868",
+          "bytes": 239458,
+          "error_fatal_entries": 0
+        },
+        "logs/debug.log": {
+          "sha256": "7027b7dab5453048beda77c8e65ea346318ef7490d0eb7d37c907221d53b9960",
+          "bytes": 1069485,
+          "error_fatal_entries": 0
+        },
+        "logs/kubejs/server.log": {
+          "sha256": "8efbd1aae1f54b015ac7a8dff627404a8d87e5b0c49af9773f7c82902e0acc59",
+          "bytes": 725,
+          "error_fatal_entries": 0
+        },
+        "logs/kubejs/startup.log": {
+          "sha256": "111425bf0b048303356291d959f5cea5f5a8387a1a3d9374a0dec1a86b151135",
+          "bytes": 644,
+          "error_fatal_entries": 0
+        }
+      }
+    },
+    {
+      "seed": 8675309,
+      "directory": ".work/worldgen-b1-consented-01/8675309",
+      "loopback_port": 25587,
+      "result": {
+        "command": [
+          "/usr/lib/jvm/java-17-openjdk/bin/java",
+          "-Xmx3G",
+          "@libraries/net/minecraftforge/forge/1.20.1-47.4.10/unix_args.txt",
+          "nogui"
+        ],
+        "done": true,
+        "biome_samples": {
+          "0,0": "regenesis:dead_forest",
+          "128,128": "regenesis:dead_old_growth_birch_forest",
+          "-128,-128": "regenesis:dead_meadow"
+        },
+        "exit_code": 0,
+        "passed": true
+      },
+      "done_reported_seconds": 8.976,
+      "surface_marker_positions": [
+        [
+          0.5,
+          63.0,
+          0.5
+        ],
+        [
+          128.5,
+          70.0,
+          128.5
+        ],
+        [
+          -127.5,
+          95.0,
+          -127.5
+        ]
+      ],
+      "seed_confirmed": true,
+      "saved_game": true,
+      "all_dimensions_saved_on_shutdown": true,
+      "mod_hashes_match_lock": true,
+      "copied_libraries_match_source": true,
+      "packaged_kubejs_files_match_source": true,
+      "console_warning_counts": {
+        "[ne.mi.fm.lo.FMLConfig/CORE]": 1,
+        "[ne.mi.fm.lo.mo.ModFileParser/LOADING]": 4,
+        "[KubeJS/]": 4,
+        "[ne.mi.co.ForgeConfigSpec/CORE]": 275,
+        "[minecraft/VanillaPackResourcesBuilder]": 2
+      },
+      "debug_exceptions_nonfatal": [
+        "java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled",
+        "java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 (in module io.netty.common) cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to module io.netty.common"
+      ],
+      "crash_reports": 0,
+      "logs": {
+        "console.log": {
+          "sha256": "c200c2fabd71226c3139c19c8a391321317f9330dc0456facfee6f6620b22f84",
+          "bytes": 196567,
+          "error_fatal_entries": 0
+        },
+        "result.json": {
+          "sha256": "0d2b29e39856b7fc4538f93db2525dd7b3fa820ff1efa9fb258aa00637e1eef3",
+          "bytes": 378,
+          "error_fatal_entries": 0
+        },
+        "logs/latest.log": {
+          "sha256": "ba53b833dccd1b1dd5ca379b36ec77493f5a1d631374241ecd03b6ab314dd82d",
+          "bytes": 239499,
+          "error_fatal_entries": 0
+        },
+        "logs/debug.log": {
+          "sha256": "66eb3a01b58640037ea5094c0cab82a72e36dd796e0cfbad46374454652b9fc0",
+          "bytes": 1069078,
+          "error_fatal_entries": 0
+        },
+        "logs/kubejs/server.log": {
+          "sha256": "b300965e48b033f035a4fdfc35ae355d31b93805d3327a894dd5ca9bd5054c59",
+          "bytes": 723,
+          "error_fatal_entries": 0
+        },
+        "logs/kubejs/startup.log": {
+          "sha256": "dac3daec9969369afb152ad513f82fa8269687836326e2d7eb6c8465cbd68d9d",
+          "bytes": 644,
+          "error_fatal_entries": 0
+        }
+      }
+    },
+    {
+      "seed": -20261018,
+      "directory": ".work/worldgen-b1-consented-01/-20261018",
+      "loopback_port": 25588,
+      "result": {
+        "command": [
+          "/usr/lib/jvm/java-17-openjdk/bin/java",
+          "-Xmx3G",
+          "@libraries/net/minecraftforge/forge/1.20.1-47.4.10/unix_args.txt",
+          "nogui"
+        ],
+        "done": true,
+        "biome_samples": {
+          "0,0": "regenesis:dead_forest",
+          "128,128": "regenesis:dead_snowy_slopes",
+          "-128,-128": "regenesis:dead_forest"
+        },
+        "exit_code": 0,
+        "passed": true
+      },
+      "done_reported_seconds": 10.303,
+      "surface_marker_positions": [
+        [
+          0.5,
+          98.0,
+          0.5
+        ],
+        [
+          128.5,
+          118.0,
+          128.5
+        ],
+        [
+          -127.5,
+          94.0,
+          -127.5
+        ]
+      ],
+      "seed_confirmed": true,
+      "saved_game": true,
+      "all_dimensions_saved_on_shutdown": true,
+      "mod_hashes_match_lock": true,
+      "copied_libraries_match_source": true,
+      "packaged_kubejs_files_match_source": true,
+      "console_warning_counts": {
+        "[ne.mi.fm.lo.FMLConfig/CORE]": 1,
+        "[ne.mi.fm.lo.mo.ModFileParser/LOADING]": 4,
+        "[KubeJS/]": 4,
+        "[ne.mi.co.ForgeConfigSpec/CORE]": 275,
+        "[minecraft/VanillaPackResourcesBuilder]": 2
+      },
+      "debug_exceptions_nonfatal": [
+        "java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled",
+        "java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 (in module io.netty.common) cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to module io.netty.common"
+      ],
+      "crash_reports": 0,
+      "logs": {
+        "console.log": {
+          "sha256": "f17487c39e682091caaa834cd9d602fbf6a5ad3e86c6821e1ca56c5c8844d556",
+          "bytes": 196880,
+          "error_fatal_entries": 0
+        },
+        "result.json": {
+          "sha256": "ddef4e39a541d03286b094608437ca951749f900f7730731329eca70ebfdc03c",
+          "bytes": 367,
+          "error_fatal_entries": 0
+        },
+        "logs/latest.log": {
+          "sha256": "acba73b247679bfc847973f1b89a5d889b672269be96ce8b8b540f1c405c31f1",
+          "bytes": 239935,
+          "error_fatal_entries": 0
+        },
+        "logs/debug.log": {
+          "sha256": "d33dc555d8d05d0af0a12fd52cd37ba426d9e88523dc4969646a51f62b6b9507",
+          "bytes": 1070823,
+          "error_fatal_entries": 0
+        },
+        "logs/kubejs/server.log": {
+          "sha256": "cd95ec8ba73988d5d639fb2e2c20ca3031f64e0f8d4f5a543ae4507179db9e1f",
+          "bytes": 725,
+          "error_fatal_entries": 0
+        },
+        "logs/kubejs/startup.log": {
+          "sha256": "dd0b20af80a4419ebf9b64bdb94a52c9e21f6ee41ec030f8f5a22ce75d777a6b",
+          "bytes": 644,
+          "error_fatal_entries": 0
+        }
+      }
+    }
+  ]
+}

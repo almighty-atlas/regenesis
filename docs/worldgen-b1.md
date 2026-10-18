@@ -3,9 +3,10 @@
 ## Status und Entscheidung
 
 Issue [#3](https://github.com/almighty-atlas/regenesis/issues/3): implementierter
-**Datenprototyp, noch keine bestätigte spielbare Welt**. Statische Prüfungen und
-Export sind bestanden. Drei-Seed-Ingame-Abnahme und Screenshots fehlen;
-[Prüfprotokoll](worldgen-b1-tests.md). Keine bestehenden Welten verwenden.
+**Datenprototyp mit bestandenem Drei-Seed-Servertest**, noch keine bestätigte
+spielbare Clientwelt. Statische Prüfungen und Export sind bestanden.
+Bereit für die manuelle Drei-Seed-Clientabnahme; Screenshots fehlen.
+Details im [Prüfprotokoll](worldgen-b1-tests.md). Keine bestehenden Welten verwenden.
 
 | Strategie unter Forge 1.20.1 | Bewertung |
 |---|---|
@@ -140,7 +141,8 @@ python3 tools/worldgen_smoke.py \
   --java /usr/lib/jvm/java-17-openjdk/bin/java --accept-eula
 ```
 
-Dieser Pfad ist **noch nicht runtime-verifiziert**. Er kopiert ausschließlich
+Dieser Pfad ist **mit allen drei Seeds runtime-verifiziert**; Belege und
+Loganalyse im [Prüfprotokoll](worldgen-b1-tests.md). Er kopiert ausschließlich
 Libraries aus dem alten Installationscache und hashgeprüfte Mods in ein exklusiv
 neu erzeugtes `.work/worldgen-b1/<seed>`, startet nacheinander drei neue Welten
 auf `127.0.0.1:25586–25588` und wartet pro Boot maximal 300 s.
