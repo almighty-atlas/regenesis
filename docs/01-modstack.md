@@ -76,7 +76,7 @@ Integration. Item Filters und weitere optionale Mods werden nicht hinzugefügt.
 
 ### Blocker und offene Architekturentscheidungen
 
-- **Weltgen:** Wasteland Reimagined überschreibt andere Biome. Für prozedurale Landschaftsvielfalt + spätere regionale Biomrückkehr brauchen wir voraussichtlich ein eigenes Datapack-Worldgen-Setup oder eine kleine Mod. Der Test mit Wasteland ist kein Architekturentscheid für 1.0.
+- **Weltgen B1:** Eigenes opt-in World-Preset mit 53 zuordenbaren toten Biomvarianten über den vorhandenen KubeJS-Datenordner implementiert, ohne neue JARs. Originale Klimazuordnung und Terrain-Dichte bleiben erhalten; Runtime-Abnahme fehlt. Wasteland Reimagined wird nicht hinzugefügt. [Entscheidung, Details und Grenzen](worldgen-b1.md).
 - **Renaturierung:** Eigene Forge-Mod für persistente Regionswerte, Flächenänderungen, Artansiedlung und spätere Biome. Für MVP zuerst demonstrierbare **Blockregeneration** in einem kleinen Testgebiet; Biomwechsel danach.
 - **Ex-Deorum-Rezepte:** Basismod enthält datengetriebene Rezepte; 1.20.1-API tatsächlich am gewählten JAR prüfen. Das Zusatzmod „KubeJS Ex Deorum“ ist nur für jüngere NeoForge-Versionen gelistet.
 - **Vegan Delight:** Version 1.4.0 Stable gegenüber 2.0.0 Beta bevorzugen; Farmer's-Delight-API-/Versionstest erforderlich.

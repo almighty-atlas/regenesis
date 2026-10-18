@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#regenesis:dead_world",
+  "features": [
+    "create:zinc_ore",
+    "create:striated_ores_overworld"
+  ],
+  "step": "underground_ores"
+}

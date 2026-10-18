@@ -4,6 +4,17 @@
 
 Ein Minecraft-Java-Modpack über die Wiederherstellung einer toten Welt: SkyFactory-artige Ressourcengewinnung, vegane Landwirtschaft, regenerative Energie, Kreislaufwirtschaft, Terraforming, Wiederansiedlung und Rekonstruktion von Arten.
 
+**Phase B1 / Issue #3:** Zusätzliches Preset **ReGenesis: Die tote Welt** als
+Worldgen-Datenprototyp implementiert: 53 zuordenbare tote Biomvarianten,
+Kiesoberfläche, erhaltene Overworld-Dichte/Höhlen/Erze, lokale Vegetations- und
+Spawnlisten. Export mit
+`python3 tools/pack.py --output .work/regenesis-phase-b1.zip`, als **neue**
+Prism-Instanz importieren und das Preset bei der **neuen** Welt ausdrücklich
+auswählen. Keine bestehende Instanz/Saves aktualisieren.
+**Noch kein erfolgreicher B1-Clientboot, Drei-Seed-Ingame-Test oder Screenshot.**
+[Architektur, Installation und reproduzierbare Tests](docs/worldgen-b1.md) ·
+[tatsächliche Testbelege und Blocker](docs/worldgen-b1-tests.md).
+
 ## Technische Leitplanken
 
 - Minecraft **1.20.1**, Forge **47.4.10 (Recommended)**, Java **17**.
@@ -37,7 +48,8 @@ python3 -m unittest discover -s tests -v
    `prismlauncher --dir /ABSOLUTER/NEUER/PFAD/regenesis-prism`.
    Ersteinrichtung abschließen, Minecraft-Konto selbst hinzufügen.
 3. **Instanz hinzufügen → Importieren**: das lokal erzeugte ZIP auswählen.
-   Es enthält `mmc-pack.json` für Minecraft 1.20.1 / Forge 47.4.10 und die
+   Es enthält `mmc-pack.json` für Minecraft 1.20.1 / Forge 47.4.10, inzwischen
+   zusätzlich die B1-Presetdaten in `.minecraft/kubejs/`, sowie die
    verifizierten Mods sowie `.minecraft/config/exdeorum-common.toml` mit
    `[common]` → `set_void_world_as_default = false`. Dadurch wird Ex Deorums
    Void-/Skyblock-Preset nicht als Standard für neue Welten gesetzt.
@@ -112,7 +124,7 @@ Dieser automatisierte Opt-in-Bootpfad bleibt ungetestet.
 
 ## Technische Grenzen des jetzigen Stands
 
-1. Wasteland Reimagined überschreibt für seinen Wasteland-Welttyp andere Biome; eine dauerhafte dynamische Renaturierung ist dadurch **nicht gelöst**.
+1. B1 verwendet eigene zuordenbare tote Biomvarianten statt Wasteland Reimagined. Dynamische Renaturierung ist weiterhin **nicht implementiert**; Architektur und Migrationsplan stehen in [docs/worldgen-b1.md](docs/worldgen-b1.md).
 2. Das jüngere Addon „KubeJS Ex Deorum“ ist **nicht** für Forge 1.20.1 erhältlich. Ex-Deorum-Rezepte werden daher zunächst mittels des integrierten Datapack-Systems beziehungsweise dokumentierter 1.20.1-APIs angepasst.
 3. „Startkiste“, einzigartige Boden-/Wasserproben und regionale Umweltwerte sind vorerst **Spezifikation**, noch keine implementierten Spielmechaniken.
 4. Der erfolgreiche Clientboot und die normale Weltgenerierung beruhen auf dem Nutzerbericht, ohne von Codex erfasste Clientlogs. Ein vollständiger Serverboot ist weiterhin nicht nachgewiesen. Der Server-Pre-EULA-Lauf bestätigt nur den frühen Startpfad; weitere Ingame-/Rezepttests bleiben offen.

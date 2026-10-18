@@ -79,10 +79,17 @@ def main():
             {'uid': 'net.minecraft', 'version': lock['minecraft'], 'important': True},
             {'uid': 'net.minecraftforge', 'version': lock['forge'], 'important': True}
         ]}, indent=2))
-        put('instance.cfg', '[General]\nInstanceType=OneSix\nname=ReGenesis Phase A\nOverrideMemory=true\nMinMemAlloc=512\nMaxMemAlloc=4096\n')
+        put('instance.cfg', '[General]\nInstanceType=OneSix\nname=ReGenesis Phase B1\nOverrideMemory=true\nMinMemAlloc=512\nMaxMemAlloc=4096\n')
         put('.minecraft/regenesis-mods.lock.json', LOCK.read_bytes())
         put('.minecraft/config/exdeorum-common.toml',
             (ROOT / 'pack/config/exdeorum-common.toml').read_bytes())
+        # Existing pinned KubeJS exposes data/assets before world registry loading.
+        for path in sorted((ROOT / 'pack/kubejs').rglob('*')):
+            if path.is_file():
+                put('.minecraft/kubejs/' + path.relative_to(ROOT / 'pack/kubejs').as_posix(),
+                    path.read_bytes())
+        for path in sorted((ROOT / 'pack/worldgen').glob('*.json')):
+            put('.minecraft/regenesis-worldgen/' + path.name, path.read_bytes())
         for mod, path in artifacts:
             put('.minecraft/mods/' + mod['filename'], path.read_bytes())
     print(f'Created {args.output}; {len(artifacts)} verified mods. LOCAL USE ONLY; do not redistribute archive.')
