@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "minecraft": "1.20.1",
+  "forge": "47.4.10",
+  "java": 17,
+  "verification": {
+    "artifact_hashes": "verified",
+    "jar_metadata": "verified",
+    "declared_dependency_ranges": "passed",
+    "minecraft_boot": "not_run",
+    "scope": "Artifact pins only; no runtime compatibility claim."
+  },
+  "dependency_semantics": "dependencies includes all mods.toml ranges, including optional ones; dependency_details preserves mandatory, owner, ordering and side. bundled_jars are supplied by their parent JAR, not separate downloads. mod_versions contains runtime versions resolved from TOML/MANIFEST.MF.",
+  "mods": [
+    {
+      "name": "Create",
+      "version": "6.0.8",
+      "filename": "create-1.20.1-6.0.8.jar",
+      "url": "https://cdn.modrinth.com/data/LNytGWDc/versions/8amzvn9x/create-1.20.1-6.0.8.jar",
+      "sha256": "6fbb910c367dbce8e4fc7e5bf64b6edd4de980906ed00af8e47e4af843c0d9b0",
+      "side": "both",
+      "project_url": "https://modrinth.com/mod/create",
+      "source_version": "mc1.20.1-6.0.8",
+      "source_version_id": "8amzvn9x",
+      "source_release_type": "release",
+      "mod_ids": [
+        "create"
+      ],
+      "mod_versions": {
+        "create": "6.0.8"
+      },
+      "dependencies": {
+        "forge": "[47.1.3,)",
+        "minecraft": "[1.20.1]",
+        "flywheel": "[1.0.0,2.0)",
+        "ponder": "[0.8,)",
+        "jei": "[15.19.0,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "create",
+          "mod_id": "forge",
+          "version_range": "[47.1.3,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "create",
+          "mod_id": "minecraft",
+          "version_range": "[1.20.1]",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "create",
+          "mod_id": "flywheel",
+          "version_range": "[1.0.0,2.0)",
+          "mandatory": true,
+          "side": "client",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "create",
+          "mod_id": "ponder",
+          "version_range": "[0.8,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "create",
+          "mod_id": "jei",
+          "version_range": "[15.19.0,)",
+          "mandatory": false,
+          "side": "client",
+          "ordering": "NONE"
+        }
+      ],
+      "license": "MIT",
+      "mod_loader": "javafml",
+      "loader_version_range": "[47,)",
+      "bundled_jars": [
+        {
+          "filename": "Registrate-MC1.20-1.3.3.jar",
+          "jar_path": "META-INF/jarjar/Registrate-MC1.20-1.3.3.jar",
+          "version": "MC1.20-1.3.3",
+          "sha256": "226862d4638b77273f4627fbac871aa0b3af584dde377f4ce2cb0c7cc228cf00",
+          "maven_coordinate": "com.tterrag.registrate:Registrate",
+          "jarjar_version_range": "[MC1.20-1.3.3,)",
+          "mod_ids": [],
+          "mod_versions": {},
+          "dependencies": {},
+          "dependency_details": []
+        },
+        {
+          "filename": "flywheel-forge-1.20.1-1.0.5.jar",
+          "jar_path": "META-INF/jarjar/flywheel-forge-1.20.1-1.0.5.jar",
+          "version": "1.0.5",
+          "sha256": "316ca250f19244956b5f0cd75329309ea65a77b4b8da854389b6a9222e7f427c",
+          "maven_coordinate": "dev.engine-room.flywheel:flywheel-forge-1.20.1",
+          "jarjar_version_range": "[1.0,2.0)",
+          "mod_ids": [
+            "flywheel"
+          ],
+          "mod_versions": {
+            "flywheel": "1.0.5"
+          },
+          "dependencies": {
+            "minecraft": "[1.20.1,1.20.2)",
+            "forge": "[47.0.0,)",
+            "embeddium": "[0.3.25,)",
+            "sodium": "[0.6.0-beta.2,)"
+          },
+          "dependency_details": [
+            {
+              "owner": "flywheel",
+              "mod_id": "minecraft",
+              "version_range": "[1.20.1,1.20.2)",
+              "mandatory": true,
+              "side": "client",
+              "ordering": "NONE"
+            },
+            {
+              "owner": "flywheel",
+              "mod_id": "forge",
+              "version_range": "[47.0.0,)",
+              "mandatory": true,
+              "side": "client",
+              "ordering": "NONE"
+            },
+            {
+              "owner": "flywheel",
+              "mod_id": "embeddium",
+              "version_range": "[0.3.25,)",
+              "mandatory": false,
+              "side": "client",
+              "ordering": "NONE"
+            },
+            {
+              "owner": "flywheel",
+              "mod_id": "sodium",
+              "version_range": "[0.6.0-beta.2,)",
+              "mandatory": false,
+              "side": "client",
+              "ordering": "NONE"
+            }
+          ],
+          "license": "MIT",
+          "mod_loader": "javafml",
+          "loader_version_range": "[0,)"
+        },
+        {
+          "filename": "mixinextras-forge-0.4.1.jar",
+          "jar_path": "META-INF/jarjar/mixinextras-forge-0.4.1.jar",
+          "version": "0.4.1",
+          "sha256": "9d48cb0a40299d283248fdad8b02c6d175c45b27f9bec48ef63d7ee8a4ee3066",
+          "maven_coordinate": "io.github.llamalad7:mixinextras-forge",
+          "jarjar_version_range": "[0.4.1,)",
+          "mod_ids": [
+            "mixinextras"
+          ],
+          "mod_versions": {
+            "mixinextras": "0.4.1"
+          },
+          "dependencies": {},
+          "dependency_details": [],
+          "license": "MIT",
+          "mod_loader": "javafml",
+          "loader_version_range": "*",
+          "bundled_jars": [
+            {
+              "filename": "MixinExtras-0.4.1.jar",
+              "jar_path": "META-INF/jars/MixinExtras-0.4.1.jar",
+              "version": "0.4.1",
+              "sha256": "d13c480d4e84128e76e8f509346f8137ceaa195091b3cfeaf4ebba584ca68374",
+              "maven_coordinate": "com.github.LlamaLad7:MixinExtras",
+              "jarjar_version_range": "[0.4.1,)",
+              "mod_ids": [],
+              "mod_versions": {},
+              "dependencies": {},
+              "dependency_details": []
+            }
+          ]
+        },
+        {
+          "filename": "Ponder-Forge-1.20.1-1.0.91.jar",
+          "jar_path": "META-INF/jarjar/Ponder-Forge-1.20.1-1.0.91.jar",
+          "version": "1.0.91",
+          "sha256": "86e6b64372aba6d9c56f2c35725ea26d8febf2c75eed9950566e7f2849443b34",
+          "maven_coordinate": "net.createmod.ponder:Ponder-Forge-1.20.1",
+          "jarjar_version_range": "[1.0.91,)",
+          "mod_ids": [
+            "ponder"
+          ],
+          "mod_versions": {
+            "ponder": "1.0.91"
+          },
+          "dependencies": {
+            "forge": "[47,)",
+            "minecraft": "[1.20.1, 1.21)",
+            "flywheel": "[1.0.0,2.0)"
+          },
+          "dependency_details": [
+            {
+              "owner": "ponder",
+              "mod_id": "forge",
+              "version_range": "[47,)",
+              "mandatory": true,
+              "side": "both",
+              "ordering": "NONE"
+            },
+            {
+              "owner": "ponder",
+              "mod_id": "minecraft",
+              "version_range": "[1.20.1, 1.21)",
+              "mandatory": true,
+              "side": "both",
+              "ordering": "NONE"
+            },
+            {
+              "owner": "ponder",
+              "mod_id": "flywheel",
+              "version_range": "[1.0.0,2.0)",
+              "mandatory": true,
+              "side": "client",
+              "ordering": "AFTER"
+            }
+          ],
+          "license": "MIT",
+          "mod_loader": "javafml",
+          "loader_version_range": "[47,)"
+        }
+      ]
+    },
+    {
+      "name": "Ex Deorum",
+      "version": "1.53",
+      "filename": "exdeorum-1.53.jar",
+      "url": "https://cdn.modrinth.com/data/WP0FLyzv/versions/9lT0xIkP/exdeorum-1.53.jar",
+      "sha256": "496e28252761448ab52306e547433873a947a4b540a73e843f05cc97c1024c4f",
+      "side": "both",
+      "project_url": "https://modrinth.com/mod/ex-deorum",
+      "source_version": "1.53",
+      "source_version_id": "9lT0xIkP",
+      "source_release_type": "release",
+      "mod_ids": [
+        "exdeorum"
+      ],
+      "mod_versions": {
+        "exdeorum": "1.53"
+      },
+      "dependencies": {
+        "forge": "[47,)",
+        "minecraft": "[1.20.1]"
+      },
+      "dependency_details": [
+        {
+          "owner": "exdeorum",
+          "mod_id": "forge",
+          "version_range": "[47,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "exdeorum",
+          "mod_id": "minecraft",
+          "version_range": "[1.20.1]",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        }
+      ],
+      "license": "GNU GPLv3",
+      "mod_loader": "javafml",
+      "loader_version_range": "[47,)"
+    },
+    {
+      "name": "Farmer's Delight",
+      "version": "1.2.11a",
+      "filename": "FarmersDelight-1.20.1-1.2.11a.jar",
+      "url": "https://cdn.modrinth.com/data/R2OftAxM/versions/RLMY4UKM/FarmersDelight-1.20.1-1.2.11a.jar",
+      "sha256": "c60d0161a5e38a63dec0f4f468fd757cf8ecfe061634a26b679fa2c5fd8eb1ee",
+      "side": "both",
+      "project_url": "https://modrinth.com/mod/farmers-delight",
+      "source_version": "1.20.1-1.2.11a",
+      "source_version_id": "RLMY4UKM",
+      "source_release_type": "release",
+      "mod_ids": [
+        "farmersdelight"
+      ],
+      "mod_versions": {
+        "farmersdelight": "1.20.1-1.2.11a"
+      },
+      "dependencies": {
+        "forge": "[47.1.0,)",
+        "minecraft": "[1.20,1.20.1]",
+        "crafttweaker": "[14.0.6,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "farmersdelight",
+          "mod_id": "forge",
+          "version_range": "[47.1.0,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "farmersdelight",
+          "mod_id": "minecraft",
+          "version_range": "[1.20,1.20.1]",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "farmersdelight",
+          "mod_id": "crafttweaker",
+          "version_range": "[14.0.6,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "NONE"
+        }
+      ],
+      "license": "MIT License",
+      "mod_loader": "javafml",
+      "loader_version_range": "[46,)"
+    },
+    {
+      "name": "Vegan Delight",
+      "version": "1.4.0",
+      "filename": "vegandelight-1.4.jar",
+      "url": "https://cdn.modrinth.com/data/Na8nA0jA/versions/wuSN5dei/vegandelight-1.4.jar",
+      "sha256": "780484e128cf91cb151d0000b43211509ab1fa2afd8bc9cb09839766dd1387e8",
+      "side": "both",
+      "project_url": "https://modrinth.com/mod/vegan-delight",
+      "source_version": "1.4.0-forge",
+      "source_version_id": "wuSN5dei",
+      "source_release_type": "release",
+      "mod_ids": [
+        "vegandelight"
+      ],
+      "mod_versions": {
+        "vegandelight": "1.4"
+      },
+      "dependencies": {
+        "forge": "[40,)",
+        "minecraft": "[1.20.1,1.21)",
+        "farmersdelight": "[1.2.3,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "vegandelight",
+          "mod_id": "forge",
+          "version_range": "[40,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "vegandelight",
+          "mod_id": "minecraft",
+          "version_range": "[1.20.1,1.21)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "vegandelight",
+          "mod_id": "farmersdelight",
+          "version_range": "[1.2.3,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        }
+      ],
+      "license": "MIT license",
+      "mod_loader": "javafml",
+      "loader_version_range": "[40,)"
+    },
+    {
+      "name": "KubeJS",
+      "version": "2001.6.5-build.26",
+      "filename": "kubejs-forge-2001.6.5-build.26.jar",
+      "url": "https://cdn.modrinth.com/data/umyGl7zF/versions/hVR2xUSr/kubejs-forge-2001.6.5-build.26.jar",
+      "sha256": "1769312192fbf9d72f45054ba61130523bfb471b5f480a4bff8c210ec09400bb",
+      "side": "both",
+      "project_url": "https://modrinth.com/mod/kubejs",
+      "source_version": "2001.6.5-build.26+forge",
+      "source_version_id": "hVR2xUSr",
+      "source_release_type": "release",
+      "mod_ids": [
+        "kubejs"
+      ],
+      "mod_versions": {
+        "kubejs": "2001.6.5-build.26"
+      },
+      "dependencies": {
+        "forge": "[47.1.0,)",
+        "rhino": "[2001.2.2-build.1,)",
+        "architectury": "[9.1.12,)",
+        "jei": "[1.0.0,)",
+        "roughlyenoughitems": "[9.1.572,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "kubejs",
+          "mod_id": "forge",
+          "version_range": "[47.1.0,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "kubejs",
+          "mod_id": "rhino",
+          "version_range": "[2001.2.2-build.1,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "kubejs",
+          "mod_id": "architectury",
+          "version_range": "[9.1.12,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "kubejs",
+          "mod_id": "jei",
+          "version_range": "[1.0.0,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "kubejs",
+          "mod_id": "roughlyenoughitems",
+          "version_range": "[9.1.572,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "AFTER"
+        }
+      ],
+      "license": "GNU LGPLv3",
+      "mod_loader": "javafml",
+      "loader_version_range": "[47,)",
+      "bundled_jars": [
+        {
+          "filename": "mixinextras-forge-0.2.0-rc.2.jar",
+          "jar_path": "META-INF/jars/mixinextras-forge-0.2.0-rc.2.jar",
+          "version": "0.2.0-rc.2",
+          "sha256": "fa9dc6759a26b39934973c7285d2030ec6929d696c71b30db2b666b2f7113594",
+          "maven_coordinate": "io.github.llamalad7:mixinextras-forge",
+          "jarjar_version_range": "[0.2.0-rc.2,)",
+          "mod_ids": [
+            "mixinextras"
+          ],
+          "mod_versions": {
+            "mixinextras": "0.2.0-rc.2"
+          },
+          "dependencies": {},
+          "dependency_details": [],
+          "license": "MIT",
+          "mod_loader": "javafml",
+          "loader_version_range": "*",
+          "bundled_jars": [
+            {
+              "filename": "MixinExtras-0.2.0-rc.2.jar",
+              "jar_path": "META-INF/jars/MixinExtras-0.2.0-rc.2.jar",
+              "version": "0.2.0-rc.2",
+              "sha256": "cfaea69b24ad6db3bf15c2500be4e754f68e2cccd1978f5b9abcddab32019cf7",
+              "maven_coordinate": "com.github.LlamaLad7:MixinExtras",
+              "jarjar_version_range": "[0.2.0-rc.2,)",
+              "mod_ids": [],
+              "mod_versions": {},
+              "dependencies": {},
+              "dependency_details": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rhino",
+      "version": "2001.2.3-build.10",
+      "filename": "rhino-forge-2001.2.3-build.10.jar",
+      "url": "https://cdn.modrinth.com/data/sk9knFPE/versions/uNALdylI/rhino-forge-2001.2.3-build.10.jar",
+      "sha256": "fed2211429301bf043864183cab9ab8e92d4cc4dbb9e488ce6c75217c54584a6",
+      "side": "both",
+      "project_url": "https://modrinth.com/mod/rhino",
+      "source_version": "2001.2.3-build.10+forge",
+      "source_version_id": "uNALdylI",
+      "source_release_type": "release",
+      "mod_ids": [
+        "rhino"
+      ],
+      "mod_versions": {
+        "rhino": "2001.2.3-build.10"
+      },
+      "dependencies": {},
+      "dependency_details": [],
+      "license": "MPL-2.0",
+      "mod_loader": "javafml",
+      "loader_version_range": "[38,)"
+    },
+    {
+      "name": "Architectury API",
+      "version": "9.2.14",
+      "filename": "architectury-9.2.14-forge.jar",
+      "url": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1MKTLiiG/architectury-9.2.14-forge.jar",
+      "sha256": "218b471d0b8a1f6cda14cfc1beb9eeb0df54304500acc6c5613d9b88ec65d9af",
+      "side": "both",
+      "project_url": "https://modrinth.com/mod/architectury-api",
+      "source_version": "9.2.14+forge",
+      "source_version_id": "1MKTLiiG",
+      "source_release_type": "release",
+      "mod_ids": [
+        "architectury"
+      ],
+      "mod_versions": {
+        "architectury": "9.2.14"
+      },
+      "dependencies": {
+        "minecraft": "[1.20,)",
+        "forge": "[46,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "architectury",
+          "mod_id": "minecraft",
+          "version_range": "[1.20,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "architectury",
+          "mod_id": "forge",
+          "version_range": "[46,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        }
+      ],
+      "license": "GNU LGPLv3",
+      "mod_loader": "javafml",
+      "loader_version_range": "[46,)"
+    },
+    {
+      "name": "Just Enough Items (JEI)",
+      "version": "15.56.0.205",
+      "filename": "jei-1.20.1-forge-15.56.0.205.jar",
+      "url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/9jqubC9n/jei-1.20.1-forge-15.56.0.205.jar",
+      "sha256": "6b251e60a4719c874da89d750af97aa6498f6f4475e3ae79cb1288c7bf0cb65c",
+      "side": "client",
+      "project_url": "https://modrinth.com/mod/jei",
+      "source_version": "15.56.0.205",
+      "source_version_id": "9jqubC9n",
+      "source_release_type": "release",
+      "mod_ids": [
+        "jei"
+      ],
+      "mod_versions": {
+        "jei": "15.56.0.205"
+      },
+      "dependencies": {
+        "forge": "[47.0,)",
+        "minecraft": "[1.20.1, 1.20.2)"
+      },
+      "dependency_details": [
+        {
+          "owner": "jei",
+          "mod_id": "forge",
+          "version_range": "[47.0,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "jei",
+          "mod_id": "minecraft",
+          "version_range": "[1.20.1, 1.20.2)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        }
+      ],
+      "license": "The MIT License (MIT)",
+      "mod_loader": "javafml",
+      "loader_version_range": "[47,)"
+    },
+    {
+      "name": "Jade 🔍",
+      "version": "11.13.3",
+      "filename": "Jade-1.20.1-Forge-11.13.3.jar",
+      "url": "https://cdn.modrinth.com/data/nvQzSEkH/versions/xJQHCmWJ/Jade-1.20.1-Forge-11.13.3.jar",
+      "sha256": "a632c77975e5aedff6322b0072f8b0db3f5d4bf914df6bdcc87d1aea4d5f55f4",
+      "side": "both",
+      "project_url": "https://modrinth.com/mod/jade",
+      "source_version": "11.13.3+forge",
+      "source_version_id": "xJQHCmWJ",
+      "source_release_type": "release",
+      "mod_ids": [
+        "jade"
+      ],
+      "mod_versions": {
+        "jade": "11.13.3+forge"
+      },
+      "dependencies": {
+        "forge": "[46, )"
+      },
+      "dependency_details": [
+        {
+          "owner": "jade",
+          "mod_id": "forge",
+          "version_range": "[46, )",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        }
+      ],
+      "license": "CC BY-NC-SA 4.0",
+      "mod_loader": "javafml",
+      "loader_version_range": "[46,)"
+    },
+    {
+      "name": "FTB Quests",
+      "version": "2001.4.22",
+      "filename": "ftb-quests-forge-2001.4.22.jar",
+      "url": "https://maven.ftb.dev/releases/dev/ftb/mods/ftb-quests-forge/2001.4.22/ftb-quests-forge-2001.4.22.jar",
+      "sha256": "9ea9d159a78a2724cfe0457b024680fdb52a2126eff9cfa5280a30578f647a68",
+      "side": "both",
+      "project_url": "https://github.com/FTBTeam/FTB-Quests",
+      "mod_ids": [
+        "ftbquests"
+      ],
+      "mod_versions": {
+        "ftbquests": "2001.4.22"
+      },
+      "dependencies": {
+        "minecraft": "[1.20.1,)",
+        "architectury": "[9.0.8,)",
+        "ftblibrary": "[2001.2.1,)",
+        "ftbteams": "[2001.1.4,)",
+        "itemfilters": "[2001.1.0-build.55,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "ftbquests",
+          "mod_id": "minecraft",
+          "version_range": "[1.20.1,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "ftbquests",
+          "mod_id": "architectury",
+          "version_range": "[9.0.8,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "ftbquests",
+          "mod_id": "ftblibrary",
+          "version_range": "[2001.2.1,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbquests",
+          "mod_id": "ftbteams",
+          "version_range": "[2001.1.4,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbquests",
+          "mod_id": "itemfilters",
+          "version_range": "[2001.1.0-build.55,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "AFTER"
+        }
+      ],
+      "license": "All Rights Reserved",
+      "mod_loader": "javafml",
+      "loader_version_range": "[39,)"
+    },
+    {
+      "name": "FTB Library",
+      "version": "2001.2.9",
+      "filename": "ftb-library-forge-2001.2.9.jar",
+      "url": "https://maven.ftb.dev/releases/dev/ftb/mods/ftb-library-forge/2001.2.9/ftb-library-forge-2001.2.9.jar",
+      "sha256": "b7d5d19889c485a9746022fdc42f3297aa4d26014559ea0ed35fa7ba816b001d",
+      "side": "both",
+      "project_url": "https://github.com/FTBTeam/FTB-Library",
+      "mod_ids": [
+        "ftblibrary"
+      ],
+      "mod_versions": {
+        "ftblibrary": "2001.2.9"
+      },
+      "dependencies": {
+        "forge": "[47.0.1,)",
+        "minecraft": "[1.20,)",
+        "architectury": "[9.0.8,)",
+        "ftbquests": "[2001.4.8,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "ftblibrary",
+          "mod_id": "forge",
+          "version_range": "[47.0.1,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "ftblibrary",
+          "mod_id": "minecraft",
+          "version_range": "[1.20,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "ftblibrary",
+          "mod_id": "architectury",
+          "version_range": "[9.0.8,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftblibrary",
+          "mod_id": "ftbquests",
+          "version_range": "[2001.4.8,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "BEFORE"
+        }
+      ],
+      "license": "All Rights Reserved",
+      "mod_loader": "javafml",
+      "loader_version_range": "[47,)"
+    },
+    {
+      "name": "FTB Teams",
+      "version": "2001.3.0",
+      "filename": "ftb-teams-forge-2001.3.0.jar",
+      "url": "https://maven.ftb.dev/releases/dev/ftb/mods/ftb-teams-forge/2001.3.0/ftb-teams-forge-2001.3.0.jar",
+      "sha256": "74817d522e59c62d083772ad66fe2395642751edb60b991a33f0306cb1aad105",
+      "side": "both",
+      "project_url": "https://github.com/FTBTeam/FTB-Teams",
+      "mod_ids": [
+        "ftbteams"
+      ],
+      "mod_versions": {
+        "ftbteams": "2001.3.0"
+      },
+      "dependencies": {
+        "forge": "[47.1.47,)",
+        "minecraft": "[1.20.1,)",
+        "architectury": "[9.1.12,)",
+        "ftblibrary": "[2001.2.0,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "ftbteams",
+          "mod_id": "forge",
+          "version_range": "[47.1.47,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "ftbteams",
+          "mod_id": "minecraft",
+          "version_range": "[1.20.1,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "ftbteams",
+          "mod_id": "architectury",
+          "version_range": "[9.1.12,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbteams",
+          "mod_id": "ftblibrary",
+          "version_range": "[2001.2.0,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        }
+      ],
+      "license": "All Rights Reserved",
+      "mod_loader": "javafml",
+      "loader_version_range": "[47,)"
+    },
+    {
+      "name": "FTB XMod Compat",
+      "version": "2.1.3",
+      "filename": "ftb-xmod-compat-forge-2.1.3.jar",
+      "url": "https://maven.ftb.dev/releases/dev/ftb/mods/ftb-xmod-compat-forge/2.1.3/ftb-xmod-compat-forge-2.1.3.jar",
+      "sha256": "16a8eb9de88d5c33d29cb076cc39dfb337b2c54348e1ef1efe9dd60cf85e5f72",
+      "side": "both",
+      "project_url": "https://github.com/FTBTeam/FTB-XMod-Compat",
+      "mod_ids": [
+        "ftbxmodcompat"
+      ],
+      "mod_versions": {
+        "ftbxmodcompat": "2.1.3"
+      },
+      "dependencies": {
+        "forge": "[47,)",
+        "minecraft": "[1.20.1,)",
+        "architectury": "[9.0.8,)",
+        "ftblibrary": "[2001.1.3,)",
+        "ftbquests": "[2001.3.0,)",
+        "ftbchunks": "[2001.2.0,)",
+        "jei": "[15.2,)",
+        "ftbranks": "[2001.1.3,)",
+        "kubejs": "[2001.6.3,)",
+        "luckperms": "[5.4.83,)"
+      },
+      "dependency_details": [
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "forge",
+          "version_range": "[47,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "minecraft",
+          "version_range": "[1.20.1,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "NONE"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "architectury",
+          "version_range": "[9.0.8,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "ftblibrary",
+          "version_range": "[2001.1.3,)",
+          "mandatory": true,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "ftbquests",
+          "version_range": "[2001.3.0,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "ftbchunks",
+          "version_range": "[2001.2.0,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "jei",
+          "version_range": "[15.2,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "ftbranks",
+          "version_range": "[2001.1.3,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "kubejs",
+          "version_range": "[2001.6.3,)",
+          "mandatory": false,
+          "side": "both",
+          "ordering": "AFTER"
+        },
+        {
+          "owner": "ftbxmodcompat",
+          "mod_id": "luckperms",
+          "version_range": "[5.4.83,)",
+          "mandatory": false,
+          "side": "server",
+          "ordering": "AFTER"
+        }
+      ],
+      "license": "All Rights Reserved",
+      "mod_loader": "javafml",
+      "loader_version_range": "[43,)"
+    }
+  ]
+}

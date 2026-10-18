@@ -1,5 +1,16 @@
 # Prüfplan — ReGenesis v0.1 / v0.2
 
+## Phase A – aktueller Stand
+
+[Ausgeführte Prüfungen und Blocker](bootstrap-tests.md),
+[Serverstart-Belege](server-smoke-evidence.md).
+
+Moddownloads/Hashes, Metadaten, Exporttests und Forge-Installation sind bestanden.
+Client-Hauptmenü und vollständiger Serverboot sind **nicht nachgewiesen**.
+Der Pre-EULA-Serverlauf und das Erkennen der Prism-Instanz sind kein Ersatz dafür.
+Die folgenden Gameplaytests bleiben Spezifikation für spätere Phasen.
+Forschungsstation, eigene Rezepte und Weltgenerierung gehören nicht zu Issue #1.
+
 ## Integration (Client / Server)
 
 1. Prism-Launcher-Instanz 1.20.1/Forge 47.4.10 mit Java 17 bootet; Versions- und Abhängigkeitsliste wird eingefroren.
