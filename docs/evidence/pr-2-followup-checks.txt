@@ -1,0 +1,50 @@
+PR #2 follow-up, 2026-10-18
+Scope: export/configuration checks; no Minecraft/server process started.
+Client boot and normal terrain: user report, not these automated checks.
+
+$ python3 tools/pack.py --check
+PASS: platform and 13 artifact records; no runtime claim
+Exit 0
+
+$ python3 tools/audit_artifacts.py
+PASS: 13 parent JARs; 20 including nested JARs; hashes, CRC, declared IDs/ranges, required providers
+Does not prove Maven version ordering, API compatibility, side safety or Minecraft boot.
+Exit 0
+
+$ python3 -m unittest discover -s tests -v
+test_archive_contains_normal_world_default (test_pack.PackTests.test_archive_contains_normal_world_default) ... ok
+test_archive_reproducible_and_exact (test_pack.PackTests.test_archive_reproducible_and_exact) ... ok
+test_corrupt_cache_fails_without_network (test_pack.PackTests.test_corrupt_cache_fails_without_network) ... ok
+test_failed_download_not_published (test_pack.PackTests.test_failed_download_not_published) ... ok
+test_lock (test_pack.PackTests.test_lock) ... ok
+test_reject_bad_records (test_pack.PackTests.test_reject_bad_records) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.237s
+
+OK
+Created /tmp/tmp7anprd4o/instance.zip; 13 verified mods. LOCAL USE ONLY; do not redistribute archive.
+Exit 0
+
+$ python3 -m py_compile tools/pack.py tools/server_smoke.py tools/audit_artifacts.py tests/test_pack.py
+
+Exit 0
+
+$ python3 tools/pack.py --output /home/atlas/git/regenesis/.work/pr-2-followup-9imheljk/artifacts.zip
+Created /home/atlas/git/regenesis/.work/pr-2-followup-9imheljk/artifacts.zip; 13 verified mods. LOCAL USE ONLY; do not redistribute archive.
+Exit 0
+
+$ python3 tools/pack.py --cache .work/clean-downloads --output /home/atlas/git/regenesis/.work/pr-2-followup-9imheljk/clean-cache.zip
+Created /home/atlas/git/regenesis/.work/pr-2-followup-9imheljk/clean-cache.zip; 13 verified mods. LOCAL USE ONLY; do not redistribute archive.
+Exit 0
+
+$ git diff --check
+
+Exit 0
+
+PASS: both existing artifact caches produce byte-identical archives.
+PASS: ZIP CRC and exact exported TOML bytes; common.set_void_world_as_default is Boolean false.
+ZIP SHA256: 2dce58486dee76dd8d5d95184da4c990a1982563ce8347ca54d1406d3008f806
+
+No new empty-cache network download, client boot, server boot or in-game integration test in this follow-up.
+Original static lock verification metadata remains a historical artifact-research snapshot.

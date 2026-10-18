@@ -38,7 +38,7 @@ FTB pairing evidence: https://raw.githubusercontent.com/FTBTeam/FTB-Quests/1.20.
 - `dependencies` maps **all** dependency mod IDs to exact unmodified TOML version ranges, including optional dependencies. `dependency_details` preserves owner, mandatory flag, side and ordering so optional entries are not mistaken for required downloads.
 - `mod_ids` describes mods directly provided by the artifact; embedded providers are described recursively in `bundled_jars`.
 - `version` uses the selected human-facing release number. `source_version` retains Modrinth's publication identifier, `mod_versions` retains actual runtime versions (including resolution of Jade's `${file.jarVersion}` via MANIFEST.MF).
-- `verification.minecraft_boot` is `not_run`; the lock is an artifact pin set, **not** evidence of runtime-compatible pairings.
+- `verification.minecraft_boot` is `not_run` in the original static research snapshot; the lock is an artifact pin set, **not** runtime evidence. The subsequent user-confirmed Java 17 client boot (18 displayed mods) and normal terrain generation are recorded separately in [bootstrap-tests.md](bootstrap-tests.md); no artifact pins changed.
 
 ## Validation actually executed
 
@@ -57,7 +57,7 @@ FTB pairing evidence: https://raw.githubusercontent.com/FTBTeam/FTB-Quests/1.20.
 - Official Maven `.../maven-metadata.xml`: HTTP 403. The public Reposilite listing API `https://maven.ftb.dev/api/maven/details/releases/dev/ftb/mods/<artifact>` works; version listings saved in `research-*-listing.json`. Exact JAR and checksum URLs work.
 - Initial static validator did not handle the embedded library wildcard loader range `*`; corrected validator, final run passed. No artifact version was changed to hide a range failure.
 
-**Not run:** Minecraft/Forge client/server boot, Java runtime loading, JarJar runtime selection, recipe/API integration, rendering/quest functionality. No static declared dependency conflict remains; no claim that this modpack boots.
+**Not run during this artifact research:** Minecraft/Forge client/server boot, Java runtime loading, JarJar runtime selection, recipe/API integration, rendering/quest functionality. No static declared dependency conflict remained. See [bootstrap-tests.md](bootstrap-tests.md) for subsequent process tests and the user-confirmed client boot; detailed integration checks remain open.
 
 ## License/download considerations
 

@@ -6,15 +6,21 @@
 [Serverstart-Belege](server-smoke-evidence.md).
 
 Moddownloads/Hashes, Metadaten, Exporttests und Forge-Installation sind bestanden.
-Client-Hauptmenü und vollständiger Serverboot sind **nicht nachgewiesen**.
-Der Pre-EULA-Serverlauf und das Erkennen der Prism-Instanz sind kein Ersatz dafür.
+Clientstart mit Java 17, 18 angezeigten Mods und normale Weltgenerierung sind
+**durch den Nutzer bestätigt** (2026-10-18), ohne von Codex erfasste Clientlogs.
+Der Exporttest prüft `common.set_void_world_as_default = false` im Prism-ZIP;
+er ersetzt keinen erneuten Ingame-Test des neu erzeugten Archivs.
+Ein vollständiger Serverboot ist **nicht nachgewiesen**.
+Der Pre-EULA-Serverlauf ist kein Ersatz dafür.
 Die folgenden Gameplaytests bleiben Spezifikation für spätere Phasen.
 Forschungsstation, eigene Rezepte und Weltgenerierung gehören nicht zu Issue #1.
 
 ## Integration (Client / Server)
 
 1. Prism-Launcher-Instanz 1.20.1/Forge 47.4.10 mit Java 17 bootet; Versions- und Abhängigkeitsliste wird eingefroren.
-2. Neues Welt-Seed startet im Forschungsstations-/Wasteland-Prototyp (kein Skyblock).
+2. Phase A: Eine neue Wegwerfwelt verwendet normale Terrain-Generierung als Standard
+   (vom Nutzer bestätigt). Forschungsstation/Wasteland sind spätere, noch nicht
+   implementierte Abnahmeziele; eigene Weltgenerierung gehört nicht zum Bootstrap.
 3. Alle Rezepte sind in JEI sichtbar; keine ungültigen oder mehrdeutigen IDs.
 4. Derselbe Pack bootet mit denselben Mods auf einem Dedicated-Forge-Server; Testclient kann verbinden.
 5. Persistente Quest- und Regionsdaten überleben Neustart und Backup/Restore.
@@ -48,4 +54,5 @@ Forschungsstation, eigene Rezepte und Weltgenerierung gehören nicht zu Issue #1
 - **MVP 0.1:** Ein neuer Spieler kann einen Baum, wiederholbare pflanzliche Nahrung, ein Sieb, einen Wasserfilter, fruchtbaren Boden und eine mechanisch angetriebene Produktionsstation ohne Fossilenergie herstellen.
 - **MVP 0.2:** Ein 16×16-Teilgebiet erhält persistente Umweltwerte, wandelt sichtbar Blöcke um und unterstützt eine erste geeignete, natürlich vermehrbare Bestäuberpopulation.
 
-Bis zum wirklichen Client-/Server-Test gilt dies als **Spezifikation, nicht als bestandener Test**.
+Die Gameplay- und Releaseziele bleiben **Spezifikation, nicht bestandene Tests**;
+die manuelle Client-/Terrain-Abnahme bestätigt nur den Bootstrap.

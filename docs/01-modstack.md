@@ -13,8 +13,10 @@
 ## Phase A – Artefaktpins (2026-10-18)
 
 Die folgende Tabelle dokumentiert die heruntergeladenen und statisch geprüften
-Artefakte. **Keine Runtime-Kompatibilitätsfreigabe:** Clientboot blockiert,
-Server nur bis EULA-Sperre gestartet. Vollständige SHA256, Bezugsquellen,
+Artefakte. Clientboot mit Java 17 und 18 angezeigten Mods sowie normale
+Weltgenerierung sind inzwischen durch den Nutzer bestätigt; weiterführende
+Integrationstests bleiben offen. Server nur bis EULA-Sperre gestartet.
+Vollständige SHA256, Bezugsquellen,
 Mod-IDs, Seiten und deklarierte Abhängigkeiten stehen in
 [`pack/mods.lock.json`](../pack/mods.lock.json), der Forge-Installer in
 [`pack/platform.lock.json`](../pack/platform.lock.json).

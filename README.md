@@ -1,13 +1,13 @@
 # ReGenesis — Entwicklungsgrundlage v0.4
 
-**Status:** Phase-A-Bootstrap mit gepinnten Artefakten und lokal erzeugbarem Prism-Archiv. **Noch kein verifiziert bootfähiges oder nachhaltig spielbares Modpack.** Stand: 2026-10-18. Clientstart blockiert am separaten Launcher-Profil ohne Konto; Serverstart nur bis EULA-Sperre getestet. Siehe [Prüfprotokoll](docs/bootstrap-tests.md).
+**Status:** Phase-A-Bootstrap mit gepinnten Artefakten und lokal erzeugbarem Prism-Archiv. Clientstart mit Java 17, 18 angezeigten Mods und normale Weltgenerierung sind durch den Nutzer bestätigt (2026-10-18). Der Export enthält jetzt den Ex-Deorum-Default für normale Welten. Serverstart nur bis EULA-Sperre getestet; **noch keine nachhaltige Gameplay-Freigabe**. Siehe [Prüfprotokoll](docs/bootstrap-tests.md).
 
 Ein Minecraft-Java-Modpack über die Wiederherstellung einer toten Welt: SkyFactory-artige Ressourcengewinnung, vegane Landwirtschaft, regenerative Energie, Kreislaufwirtschaft, Terraforming, Wiederansiedlung und Rekonstruktion von Arten.
 
 ## Technische Leitplanken
 
 - Minecraft **1.20.1**, Forge **47.4.10 (Recommended)**, Java **17**.
-- Modartefakte und Forge-Installer sind fixiert; gemeinsame Runtime-/Ingame-Prüfung bleibt vor einem spielbaren Build erforderlich.
+- Modartefakte und Forge-Installer sind fixiert; weiterführende Ingame-/Server-Prüfungen bleiben vor einem spielbaren Build erforderlich.
 - Keine Pflichtrezepte mit Fleisch, Milch, Eiern, Leder, Wolle, Honig, Knochenmehl oder tierischen Mobdrops.
 - Keine Kohle-, Holzkohle-, Öl- oder Gasverbrennung als Produktions-/Energieweg.
 - Jede Grundressource und Pflanzenart muss verlustsicher neu gewonnen werden können.
@@ -38,7 +38,11 @@ python3 -m unittest discover -s tests -v
    Ersteinrichtung abschließen, Minecraft-Konto selbst hinzufügen.
 3. **Instanz hinzufügen → Importieren**: das lokal erzeugte ZIP auswählen.
    Es enthält `mmc-pack.json` für Minecraft 1.20.1 / Forge 47.4.10 und die
-   verifizierten Mods. Keine bestehenden Instanzen, Server oder Saves verwenden.
+   verifizierten Mods sowie `.minecraft/config/exdeorum-common.toml` mit
+   `[common]` → `set_void_world_as_default = false`. Dadurch wird Ex Deorums
+   Void-/Skyblock-Preset nicht als Standard für neue Welten gesetzt.
+   Die Vorlage liegt in [`pack/config/exdeorum-common.toml`](pack/config/exdeorum-common.toml).
+   Keine bestehenden Instanzen, Server oder Saves verwenden.
 4. **Instanz bearbeiten → Einstellungen → Java**: explizit **Java 17** auswählen
    und testen (auf diesem Host `/usr/lib/jvm/java-17-openjdk/bin/java`).
    Nicht auf die System-JVM verlassen: hier ist der Standard Java 27.
@@ -46,7 +50,14 @@ python3 -m unittest discover -s tests -v
 5. Instanz starten; Prism lädt Minecraft, Forge und Launcher-Libraries nach.
    Nach dem Hauptmenü nur eine **neue Wegwerfwelt** anlegen. `logs/latest.log`,
    gegebenenfalls `crash-reports/`, sowie die genaue Modliste für die Abnahme sichern.
-   Dieser letzte Schritt wurde hier **nicht erfolgreich abgeschlossen**.
+   Clientstart und normale Weltgenerierung wurden vom Nutzer bestätigt;
+   separate JEI-/Quest-/Renderingtests und von Codex erfasste Clientlogs fehlen noch.
+
+**CachyOS / Audio:** Bei verzerrtem oder blechernem Sound gegebenenfalls unter
+**Instanz bearbeiten → Einstellungen → Workarounds** die Option
+**Use system installation of OpenAL** aktivieren und den Client neu starten.
+Dies hat den Sound beim Nutzertest korrigiert. Die Einstellung ist hostabhängig
+und wird im Export nicht global erzwungen.
 
 Das ZIP ist ein **lokales Installationsprodukt, kein freigegebenes Distributionspaket**.
 Insbesondere FTB-/Jade-/Create-Lizenzen vor jeder Weitergabe prüfen; keine JARs
@@ -60,6 +71,9 @@ Mit `--output .work/regenesis-phase-a-2.zip` einen neuen Namen verwenden;
 Cache-Dateien werden erneut gehasht. Ein falscher Cachehash führt zum Abbruch,
 nicht zum stillen Überschreiben. Bei unterbrochenen Downloads wird keine
 unverifizierte JAR als fertiges Cache-Artefakt veröffentlicht.
+Bereits erzeugte ZIPs enthalten die neue Konfiguration nicht nachträglich:
+ein neues Archiv bauen und als neue Instanz importieren. Der Exporter verändert
+keine installierten Instanzen oder Spielstände.
 
 ### Optionaler isolierter Serverdiagnoselauf (Linux)
 
@@ -81,10 +95,12 @@ Dieser automatisierte Opt-in-Bootpfad bleibt ungetestet.
 ### Ergebnisübersicht
 
 - **Bestanden:** echte Moddownloads (auch mit leerem Cache), Hash-/Metadatenchecks,
-  deterministischer Export, fünf Workflowtests, Forge-Serverinstallation.
-- **Blockiert:** Prism-Clientstart ohne Konto in separatem Profil; vollständiger
-  Serverstart ohne persönliche EULA-Zustimmung.
-- **Nicht durchgeführt:** Hauptmenü-/Welt-/JEI-/Quest-/Verbindungstests;
+  deterministischer Export, sechs Workflowtests einschließlich des Konfigurationschecks
+  im ZIP, Forge-Serverinstallation.
+- **Durch Nutzer bestätigt:** Clientstart mit Java 17 und 18 angezeigten Mods;
+  normale Weltgenerierung nach Abschalten des Ex-Deorum-Void-Defaults.
+- **Blockiert:** vollständiger Serverstart ohne persönliche EULA-Zustimmung.
+- **Nicht durchgeführt:** separate JEI-/Quest-/Rendering-/Verbindungstests;
   vegane und fossilfreie Progressionsabnahme.
 
 ## Dokumente
@@ -99,7 +115,7 @@ Dieser automatisierte Opt-in-Bootpfad bleibt ungetestet.
 1. Wasteland Reimagined überschreibt für seinen Wasteland-Welttyp andere Biome; eine dauerhafte dynamische Renaturierung ist dadurch **nicht gelöst**.
 2. Das jüngere Addon „KubeJS Ex Deorum“ ist **nicht** für Forge 1.20.1 erhältlich. Ex-Deorum-Rezepte werden daher zunächst mittels des integrierten Datapack-Systems beziehungsweise dokumentierter 1.20.1-APIs angepasst.
 3. „Startkiste“, einzigartige Boden-/Wasserproben und regionale Umweltwerte sind vorerst **Spezifikation**, noch keine implementierten Spielmechaniken.
-4. Es wurde noch kein erfolgreicher Clientboot oder vollständiger Serverboot nachgewiesen. Der echte Server-Pre-EULA-Lauf bestätigt nur den frühen Startpfad; Ingame-/Rezepttests bleiben offen.
+4. Der erfolgreiche Clientboot und die normale Weltgenerierung beruhen auf dem Nutzerbericht, ohne von Codex erfasste Clientlogs. Ein vollständiger Serverboot ist weiterhin nicht nachgewiesen. Der Server-Pre-EULA-Lauf bestätigt nur den frühen Startpfad; weitere Ingame-/Rezepttests bleiben offen.
 5. Phase A verändert keine Vanilla-/Mod-Rezepte: Tierprodukte und Verbrennung sind noch nicht gesperrt. Der Bootstrap ist keine nachhaltige Gameplay-Freigabe.
 
 ## Öffentliche Quellen

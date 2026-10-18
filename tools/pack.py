@@ -71,7 +71,7 @@ def main():
     args.cache.mkdir(parents=True, exist_ok=True)
     artifacts = [(m, fetch(m, args.cache)) for m in lock['mods'] if m['side'] != 'server']
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    # Fixed ZIP timestamps and ordering make the same lock produce the same archive.
+    # Fixed ZIP timestamps and ordering make unchanged pack inputs reproducible.
     with zipfile.ZipFile(args.output, 'x', compression=zipfile.ZIP_DEFLATED) as archive:
         def put(name, data):
             archive.writestr(zipfile.ZipInfo(name, date_time=(2025, 1, 1, 0, 0, 0)), data)
@@ -81,6 +81,8 @@ def main():
         ]}, indent=2))
         put('instance.cfg', '[General]\nInstanceType=OneSix\nname=ReGenesis Phase A\nOverrideMemory=true\nMinMemAlloc=512\nMaxMemAlloc=4096\n')
         put('.minecraft/regenesis-mods.lock.json', LOCK.read_bytes())
+        put('.minecraft/config/exdeorum-common.toml',
+            (ROOT / 'pack/config/exdeorum-common.toml').read_bytes())
         for mod, path in artifacts:
             put('.minecraft/mods/' + mod['filename'], path.read_bytes())
     print(f'Created {args.output}; {len(artifacts)} verified mods. LOCAL USE ONLY; do not redistribute archive.')

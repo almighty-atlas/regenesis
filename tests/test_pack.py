@@ -6,6 +6,7 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import tomllib
 import unittest
 from unittest.mock import patch
 import zipfile
@@ -77,6 +78,23 @@ class PackTests(unittest.TestCase):
             result = subprocess.run([sys.executable, str(ROOT / 'tools/pack.py'),
                                      '--output', str(outputs[0])], capture_output=True)
             self.assertNotEqual(result.returncode, 0)
+
+    def test_archive_contains_normal_world_default(self):
+        # Exercise the exporter without downloads or a populated artifact cache.
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            artifact = root / 'fixture.jar'
+            artifact.write_bytes(b'local artifact fixture')
+            output = root / 'instance.zip'
+            with patch.object(pack, 'fetch', return_value=artifact), \
+                 patch.object(sys, 'argv', ['pack.py', '--output', str(output),
+                                          '--cache', str(root / 'cache')]):
+                pack.main()
+            with zipfile.ZipFile(output) as archive:
+                data = archive.read('.minecraft/config/exdeorum-common.toml')
+                self.assertEqual(data, (ROOT / 'pack/config/exdeorum-common.toml').read_bytes())
+                config = tomllib.loads(data.decode('utf-8'))
+                self.assertIs(config['common']['set_void_world_as_default'], False)
 
 
 if __name__ == '__main__':
